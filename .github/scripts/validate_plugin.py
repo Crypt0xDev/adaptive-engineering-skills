@@ -7,11 +7,22 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 errors = []
 
+manifests = {}
 for manifest in (".claude-plugin/plugin.json", ".claude-plugin/marketplace.json"):
     try:
-        json.loads((ROOT / manifest).read_text(encoding="utf-8"))
+        manifests[manifest] = json.loads((ROOT / manifest).read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
         errors.append(f"{manifest}: {exc}")
+
+plugin = manifests.get(".claude-plugin/plugin.json", {})
+market = manifests.get(".claude-plugin/marketplace.json", {})
+for key in ("name", "description", "version"):
+    if not plugin.get(key):
+        errors.append(f".claude-plugin/plugin.json: falta '{key}'")
+if plugin.get("version") and not re.fullmatch(r"\d+\.\d+\.\d+", plugin["version"]):
+    errors.append(".claude-plugin/plugin.json: 'version' debe ser semver (X.Y.Z)")
+if plugin.get("name") and plugin["name"] not in [p.get("name") for p in market.get("plugins", [])]:
+    errors.append(f".claude-plugin/marketplace.json: no lista el plugin '{plugin['name']}'")
 
 for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
     skill_dir = skill_md.parent
@@ -41,7 +52,23 @@ for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
             if not (owner / ref).exists():
                 errors.append(f"{md.relative_to(ROOT)}: no existe {owner.name}/{ref}")
 
+# Coherencia: cada skill aparece en el README y el total declarado coincide con las carpetas
+skills = sorted(p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md"))
+readme = (ROOT / "README.md").read_text(encoding="utf-8")
+for skill in skills:
+    if f"`{skill}`" not in readme:
+        errors.append(f"README.md: falta la skill '{skill}' en la tabla")
+sources = {
+    "README.md": readme,
+    ".claude-plugin/plugin.json": plugin.get("description", ""),
+    ".claude-plugin/marketplace.json": " ".join(p.get("description", "") for p in market.get("plugins", [])),
+}
+for source, text in sources.items():
+    declared = {int(a or b) for a, b in re.findall(r"\b(\d+)[+ ]skills\b|skills-(\d+)-", text)}
+    for count in declared - {len(skills)}:
+        errors.append(f"{source}: dice {count} skills pero hay {len(skills)}")
+
 if errors:
     print("\n".join(errors))
     sys.exit(1)
-print("OK: plugin valido")
+print(f"OK: plugin valido ({len(skills)} skills)")
