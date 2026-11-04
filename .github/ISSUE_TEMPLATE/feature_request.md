@@ -1,3 +1,4 @@
+---
 name: Solicitud de característica
 about: Sugiere una mejora o nueva funcionalidad para el proyecto.
 title: "[FEATURE] "

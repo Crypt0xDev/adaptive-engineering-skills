@@ -1,3 +1,4 @@
+---
 name: Informe de error
 about: Reporta un problema o comportamiento inesperado del proyecto.
 title: "[BUG] "
