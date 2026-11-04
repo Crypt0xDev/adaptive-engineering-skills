@@ -1,0 +1,14 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Personal
+.claude
+CLAUDE.md
