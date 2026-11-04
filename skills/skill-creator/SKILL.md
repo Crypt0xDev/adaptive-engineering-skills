@@ -25,7 +25,7 @@ Diseñar y mantener las skills del sistema. Es la meta-skill: define el estánda
 - Las skills existentes (para verificar que no haya solapamiento).
 
 ## Salida esperada
-Una carpeta `skills/<nombre-kebab-case>/` con un `SKILL.md` que cumple la estructura obligatoria (ver plantilla abajo).
+Una carpeta `skills/<nombre-kebab-case>/` con un `SKILL.md` que cumple la estructura obligatoria (ver plantilla abajo). El `name` del frontmatter es igual al nombre de la carpeta, la `description` dice qué hace y cuándo usarla (Claude decide activarla por esa línea), y la skill se añade a la tabla del `README.md`. El CI verifica las tres cosas.
 
 ## Reglas internas
 
@@ -53,6 +53,11 @@ Una carpeta `skills/<nombre-kebab-case>/` con un `SKILL.md` que cumple la estruc
 ## Plantilla obligatoria
 
 ```markdown
+---
+name: <nombre-kebab-case>
+description: <Qué hace. Usar cuando ...>
+---
+
 # <emoji> <Nombre de la skill>
 
 ## Propósito
