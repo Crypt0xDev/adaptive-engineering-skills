@@ -8,7 +8,7 @@ Reglas obligatorias al escribir o modificar código. A diferencia de los patrone
 
 ### Código duplicado
 - Antes de escribir, buscar si la lógica ya existe en el proyecto y reutilizarla.
-- Si una lógica se repite 3 veces, extraerla (regla de tres, skill `buenas-practicas-ingenieria` → `references/principles.md`).
+- Si una lógica se repite 3 veces, extraerla (regla de tres, skill `engineering-best-practices` → `references/principles.md`).
 - No copiar/pegar bloques: extraer función o módulo compartido.
 
 ### Nombres poco descriptivos
@@ -96,7 +96,7 @@ Reglas obligatorias al escribir o modificar código. A diferencia de los patrone
 Criterios detallados en otras skills del plugin:
 
 - **Microservicios** → skill `software-architect` → `references/microservices.md`: cuándo separar en dos o más servicios (límite de dominio probado + escala independiente + equipos independientes), y cuándo no (MVP, equipo pequeño, cargo cult).
-- **OOP, polimorfismo y relaciones entre entidades** → skill `buenas-practicas-ingenieria` → `references/oop-and-patterns.md`: OOP cuando hay entidades con estado e invariantes; polimorfismo con 2+ implementaciones reales; cada relación justificada por un caso de uso real.
+- **OOP, polimorfismo y relaciones entre entidades** → skill `engineering-best-practices` → `references/oop-and-patterns.md`: OOP cuando hay entidades con estado e invariantes; polimorfismo con 2+ implementaciones reales; cada relación justificada por un caso de uso real.
 - **Singleton** → mismo archivo: solo cuando el sistema requiere genuinamente una única instancia (pool de conexiones, config, logger), y aun así preferir inyección de dependencias sobre acceso global.
 - **Modelado y normalización de BD** → skill `database-architect` → `references/data-modeling.md`: 3FN por defecto, integridad en la BD, desnormalizar solo con medición y documentación.
 
