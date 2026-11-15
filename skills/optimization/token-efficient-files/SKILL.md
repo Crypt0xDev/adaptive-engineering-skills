@@ -1,5 +1,5 @@
 ---
-name: ahorro-tokens-archivos
+name: token-efficient-files
 description: "Mandatory token-saving strategy for reading or generating PDF, Word (.docx), Excel (.xlsx), and PowerPoint (.pptx) files. Use ALWAYS when the user uploads, mentions, or asks to analyze/summarize/read a pdf, word, excel, or ppt file — especially long, unstructured university papers. Also when generating or editing these formats. Applies BEFORE format-specific skills (docx/pdf/pptx/xlsx): defines HOW to read/edit them cheaply, not how to format them."
 ---
 
@@ -111,5 +111,5 @@ User asks: "Read this PDF."
 
 ## Related Skills
 
-- **redaccion-academica** — when the file being read is a source for academic writing, this skill handles cheap reading; that skill defines how to cite it.
+- **academic-writing** — when the file being read is a source for academic writing, this skill handles cheap reading; that skill defines how to cite it.
 - **docx / pdf / pptx / xlsx** — for output formatting; this skill decides how much to read before invoking them.
