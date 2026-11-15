@@ -58,7 +58,7 @@ Ejemplo válido: snapshot del precio en `order_items` — no es desnormalizació
 - **1:N** — la habitual: FK en el lado "muchos" (`orders.customer_id`).
 - **N:M** — tabla intermedia con nombre de negocio si lo tiene (`enrollments` mejor que `student_course`).
 - **1:1** — sospechosa: casi siempre son la misma tabla; separar solo por seguridad (datos sensibles) o por columnas enormes poco consultadas.
-- Cada relación se justifica con un caso de uso real que la recorra (ver skill `buenas-practicas-ingenieria` → `references/oop-and-patterns.md`).
+- Cada relación se justifica con un caso de uso real que la recorra (ver skill `engineering-best-practices` → `references/oop-and-patterns.md`).
 
 ## Índices
 

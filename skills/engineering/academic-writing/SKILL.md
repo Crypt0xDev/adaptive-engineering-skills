@@ -1,5 +1,5 @@
 ---
-name: redaccion-academica
+name: academic-writing
 description: "Writes, improves, and structures academic documents — reports, theses, monographs, theoretical frameworks, essays, and technical papers — with natural academic language, correctly placed citations, verified real sources, and recent relevant bibliography. Supports APA, IEEE, Vancouver, ISO 690, and other standards. Use ALWAYS when asked to write, expand, correct, or improve academic text that requires citations and references."
 ---
 
@@ -233,4 +233,4 @@ Before delivering the work:
 
 ## Related Skills
 
-- **ahorro-tokens-archivos** — when sources or assignments come in PDF/Word, that skill handles cheap reading before writing.
+- **token-efficient-files** — when sources or assignments come in PDF/Word, that skill handles cheap reading before writing.

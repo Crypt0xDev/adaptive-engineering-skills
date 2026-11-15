@@ -1,5 +1,5 @@
 ---
-name: buenas-practicas-ingenieria
+name: engineering-best-practices
 description: "Applies software engineering best practices (SOLID, maintainable folder structure, separation of concerns, scalability, naming, security) with judgment on any coding task in any language. Use ALWAYS when writing, reviewing, or structuring code, adding features, or discussing architecture and organization. Evaluates whether the project warrants a given structure before imposing it, respects existing conventions, and prioritizes long-term maintainability without over-engineering."
 ---
 
@@ -20,7 +20,7 @@ Apply software engineering best practices — SOLID principles, clean structure,
 
 - As a checklist to blindly impose SOLID on a 50-line script
 - To override project conventions with personal preferences
-- When the task is purely about choosing *which* technology (that's `decisiones-tecnicas-fundamentadas`); this skill covers *how* to implement it well
+- When the task is purely about choosing *which* technology (that's `grounded-technical-decisions`); this skill covers *how* to implement it well
 
 ## The Process
 
@@ -166,8 +166,8 @@ REFACTORING CHECKLIST:
 
 ## Related Skills
 
-- **decisiones-tecnicas-fundamentadas** — decides WHICH approach/technology to use; this skill guides HOW to implement it well.
-- **graphql-evaluacion-implementacion** — inherits these structure and scale rules for the GraphQL case.
+- **grounded-technical-decisions** — decides WHICH approach/technology to use; this skill guides HOW to implement it well.
+- **graphql-evaluation** — inherits these structure and scale rules for the GraphQL case.
 
 ## References (load only when needed)
 

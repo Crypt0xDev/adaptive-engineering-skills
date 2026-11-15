@@ -7,7 +7,7 @@
 - Proyecto en etapa idea / MVP (el dominio aún cambia demasiado).
 - Equipo pequeño (< 2-3 equipos independientes): un solo equipo mantiene mejor un monolito.
 - Límites de dominio aún no probados en producción.
-- "Porque lo usa Netflix/Google" (cargo cult — ver anti-patterns en la skill `buenas-practicas-ingenieria`).
+- "Porque lo usa Netflix/Google" (cargo cult — ver anti-patterns en la skill `engineering-best-practices`).
 - Para resolver problemas de código desordenado: un monolito desordenado se convierte en microservicios desordenados + red.
 
 ## ✅ Cuándo SÍ se justifica separar en dos o más servicios

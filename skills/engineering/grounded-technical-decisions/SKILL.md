@@ -1,5 +1,5 @@
 ---
-name: decisiones-tecnicas-fundamentadas
+name: grounded-technical-decisions
 description: "Makes grounded technical decisions based on the project's real context — not assumptions. Use ALWAYS when choosing between technical options (architecture, library, framework, database, pattern, implementation approach, refactoring strategy) or when the user asks 'which should I use' / 'what's best for this' / 'is this the right choice'. Gathers context first, analyzes the concrete case, then delivers a reasoned recommendation with explicit trade-offs."
 ---
 
@@ -20,7 +20,7 @@ Make technical decisions grounded in the project's real context. Before recommen
 ## When NOT to Use
 
 - The decision is purely cosmetic (naming style, formatting) — follow the project's existing convention
-- The user already made the decision and just wants implementation help — use `buenas-practicas-ingenieria` instead
+- The user already made the decision and just wants implementation help — use `engineering-best-practices` instead
 - You're choosing between equivalent options where context doesn't matter (both are fine)
 
 ## The Golden Rule: Don't Fabricate, Verify
@@ -137,5 +137,5 @@ Before closing a decision:
 
 ## Related Skills
 
-- **buenas-practicas-ingenieria** — once the approach is decided, that skill guides how to implement it well.
-- **graphql-evaluacion-implementacion** — a concrete application of this skill to the "should we use GraphQL?" case.
+- **engineering-best-practices** — once the approach is decided, that skill guides how to implement it well.
+- **graphql-evaluation** — a concrete application of this skill to the "should we use GraphQL?" case.
