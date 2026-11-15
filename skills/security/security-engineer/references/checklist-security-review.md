@@ -1,23 +1,23 @@
-# ✅ Checklist: Security Review
+# Checklist: Security Review
 
-## Mínimos no negociables
-- [ ] Secretos fuera del código (variables de entorno / vault).
-- [ ] HTTPS en todos los entornos públicos.
-- [ ] Contraseñas con hashing fuerte (bcrypt / argon2).
-- [ ] Queries parametrizadas en todo acceso a datos.
-- [ ] Validación de entradas en el límite del sistema.
+## Non-negotiable Minimums
+- [ ] Secrets out of the code (environment variables / vault).
+- [ ] HTTPS on all public environments.
+- [ ] Passwords with strong hashing (bcrypt / argon2).
+- [ ] Parameterized queries on all data access.
+- [ ] Input validation at the system boundary.
 
-## Autenticación y autorización
-- [ ] Tokens con expiración y renovación segura.
-- [ ] Autorización verificada por recurso (no solo "está logueado").
-- [ ] Sin IDs predecibles que permitan acceso a datos ajenos (IDOR).
+## Authentication and Authorization
+- [ ] Tokens with expiration and secure renewal.
+- [ ] Authorization verified per resource (not just "is logged in").
+- [ ] No predictable IDs that allow access to others' data (IDOR).
 
-## Datos
-- [ ] Datos sensibles identificados y cifrados en reposo si aplica.
-- [ ] Sin datos sensibles en logs.
-- [ ] Cumplimiento aplicable revisado (GDPR / PCI / sectorial).
+## Data
+- [ ] Sensitive data identified and encrypted at rest if applicable.
+- [ ] No sensitive data in logs.
+- [ ] Applicable compliance reviewed (GDPR / PCI / sector).
 
-## Superficie
-- [ ] Dependencias sin vulnerabilidades conocidas (npm audit / equivalente).
-- [ ] Rate limiting en endpoints públicos y de login.
-- [ ] Headers de seguridad configurados (CSP, HSTS, etc.).
+## Surface
+- [ ] Dependencies without known vulnerabilities (npm audit / equivalent).
+- [ ] Rate limiting on public and login endpoints.
+- [ ] Security headers configured (CSP, HSTS, etc.).
