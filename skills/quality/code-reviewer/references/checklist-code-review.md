@@ -1,34 +1,34 @@
-# ✅ Checklist: Code Review
+# Checklist: Code Review
 
-## Simplicidad
-- [ ] ¿Existe una solución más simple que haga lo mismo?
-- [ ] ¿Hay abstracciones con una sola implementación sin justificar?
-- [ ] ¿Hay código para futuros hipotéticos? (YAGNI)
+## Simplicity
+- [ ] Is there a simpler solution that does the same thing?
+- [ ] Are there abstractions with a single unjustified implementation?
+- [ ] Is there code for hypothetical futures? (YAGNI)
 
-## Corrección
-- [ ] ¿Los casos límite del flujo principal están cubiertos?
-- [ ] ¿Los errores se manejan donde se puede actuar sobre ellos?
-- [ ] ¿Tests del comportamiento de valor (no de implementación)?
+## Correctness
+- [ ] Are edge cases in the main flow covered?
+- [ ] Are errors handled where they can be acted upon?
+- [ ] Tests for value behavior (not implementation)?
 
-## Mantenibilidad (references/code-quality.md)
-- [ ] ¿Sin código duplicado? (reutiliza lo existente; extraído a la tercera repetición)
-- [ ] ¿Nombres descriptivos por intención de negocio? (sin `data`, `temp`, `doStuff`)
-- [ ] ¿Funciones pequeñas con una sola responsabilidad? (~30-40 líneas, ≤3 niveles de anidación)
-- [ ] ¿Bajo acoplamiento? (comunicación por contratos, sin globals mutables, sin ciclos)
-- [ ] ¿Documentado? (comentarios del porqué, docstrings en funciones públicas)
-- [ ] ¿Lo entiende un dev nuevo en 10 minutos?
-- [ ] ¿Consistente con el estilo del código circundante?
+## Maintainability (references/code-quality.md)
+- [ ] No duplicated code? (reuse existing; extract on the third repetition)
+- [ ] Descriptive names by business intent? (no `data`, `temp`, `doStuff`)
+- [ ] Small functions with a single responsibility? (~30-40 lines, ≤3 nesting levels)
+- [ ] Low coupling? (communication via contracts, no mutable globals, no cycles)
+- [ ] Documented? (comments on the why, docstrings on public functions)
+- [ ] Can a new dev understand it in 10 minutes?
+- [ ] Consistent with surrounding code style?
 
-## Seguridad (references/code-quality.md)
-- [ ] ¿Validación de usuarios en el servidor y autorización por recurso?
-- [ ] ¿Contraseñas con política mínima y hasheadas con bcrypt/argon2?
-- [ ] ¿Queries parametrizadas en todo acceso a datos?
-- [ ] ¿Entradas validadas/sanitizadas y salidas escapadas según contexto?
-- [ ] ¿Sesiones con expiración, cookies HttpOnly/Secure/SameSite, invalidación al logout?
-- [ ] ¿Mínimo privilegio en BD, API keys y rutas admin?
-- [ ] ¿Dependencias auditadas y fijadas en lockfile?
-- [ ] ¿Errores sin exponer stack traces, rutas internas ni SQL al usuario?
-- [ ] ¿Secretos fuera del código (variables de entorno)?
+## Security (references/code-quality.md)
+- [ ] Server-side user validation and per-resource authorization?
+- [ ] Passwords with minimum policy and hashed with bcrypt/argon2?
+- [ ] Parameterized queries on all data access?
+- [ ] Inputs validated/sanitized and outputs escaped per context?
+- [ ] Sessions with expiration, HttpOnly/Secure/SameSite cookies, invalidation on logout?
+- [ ] Least privilege on DB, API keys, and admin routes?
+- [ ] Dependencies audited and pinned in lockfile?
+- [ ] Errors without exposing stack traces, internal paths, or SQL to the user?
+- [ ] Secrets out of the code (environment variables)?
 
-## Veredicto
-Clasificar cada hallazgo como **Bloqueante** / **Importante** / **Sugerencia**, siempre proponiendo la alternativa.
+## Verdict
+Classify each finding as **Blocker** / **Important** / **Suggestion**, always proposing the alternative.
