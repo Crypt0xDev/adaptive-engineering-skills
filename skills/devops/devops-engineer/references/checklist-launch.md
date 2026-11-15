@@ -1,25 +1,25 @@
-# ✅ Checklist: Launch
+# Checklist: Launch
 
-## Funcional
-- [ ] Flujo principal de valor probado de extremo a extremo.
-- [ ] Estados de error y vacíos manejados en la UI.
-- [ ] Probado en los dispositivos/navegadores del público objetivo.
+## Functional
+- [ ] Main value flow tested end to end.
+- [ ] Error and empty states handled in the UI.
+- [ ] Tested on target audience devices/browsers.
 
-## Operación
-- [ ] Deploy reproducible y rollback probado.
-- [ ] Backups automáticos activos y restauración verificada.
-- [ ] Monitoreo de errores activo (Sentry o similar) con alertas.
-- [ ] Logs accesibles en producción.
+## Operations
+- [ ] Reproducible deploy and rollback tested.
+- [ ] Automated backups active and restoration verified.
+- [ ] Error monitoring active (Sentry or similar) with alerts.
+- [ ] Logs accessible in production.
 
-## Seguridad
-- [ ] Checklist de seguridad completado (skill `security-engineer` → `references/checklist-security-review.md`).
-- [ ] Variables de entorno de producción revisadas (sin valores de dev).
+## Security
+- [ ] Security checklist completed (skill `security-engineer` → `references/checklist-security-review.md`).
+- [ ] Production environment variables reviewed (no dev values).
 
-## Negocio
-- [ ] Métricas de éxito instrumentadas (analytics mínimo).
-- [ ] Términos / privacidad publicados si hay datos de usuarios.
-- [ ] Canal de soporte/feedback definido.
+## Business
+- [ ] Success metrics instrumented (minimum analytics).
+- [ ] Terms / privacy published if user data is collected.
+- [ ] Support/feedback channel defined.
 
-## Post-lanzamiento
-- [ ] Responsable de guardia las primeras 48h definido.
-- [ ] Plan para la primera iteración basada en feedback real.
+## Post-launch
+- [ ] On-call owner for the first 48h defined.
+- [ ] Plan for the first iteration based on real feedback.
