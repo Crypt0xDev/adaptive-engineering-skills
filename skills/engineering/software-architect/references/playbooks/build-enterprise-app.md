@@ -1,30 +1,30 @@
-# 🏢 Playbook: Build Enterprise App
+# Playbook: Build Enterprise App
 
-## Skills involucradas
+## Skills Involved
 `business-analyst` → `software-architect` → `database-architect` → `security-engineer` → `devops-engineer` → `code-reviewer`
 
-## Diferencias de contexto
-Aquí el contexto sí justifica más estructura: múltiples stakeholders, cumplimiento, integraciones legadas, horizonte de vida largo.
+## Context Differences
+Here the context does justify more structure: multiple stakeholders, compliance, legacy integrations, long lifespan.
 
-## Fases
+## Phases
 
-### 1. Requisitos (business-analyst)
-- Mapear stakeholders, procesos actuales e integraciones existentes (ERP, AD/SSO, legados).
-- Requisitos con criterios de aceptación firmados.
+### 1. Requirements (business-analyst)
+- Map stakeholders, current processes, and existing integrations (ERP, AD/SSO, legacy systems).
+- Requirements with signed acceptance criteria.
 
-### 2. Arquitectura (software-architect)
-- Monolito modular con límites de dominio claros — preparado para extraer, no extraído.
-- Contratos explícitos con sistemas externos; anticorrupción en los bordes con legados.
+### 2. Architecture (software-architect)
+- Modular monolith with clear domain boundaries — prepared to extract, not extracted.
+- Explicit contracts with external systems; anti-corruption layer at legacy boundaries.
 
-### 3. Seguridad y cumplimiento (security-engineer)
-- SSO corporativo (SAML / OIDC), RBAC por recurso.
-- Auditoría de acciones sensibles desde el día uno.
-- Cumplimiento aplicable (GDPR, SOC2, normativa sectorial).
+### 3. Security and Compliance (security-engineer)
+- Corporate SSO (SAML / OIDC), RBAC per resource.
+- Audit trail for sensitive actions from day one.
+- Applicable compliance (GDPR, SOC2, sector regulations).
 
-### 4. Calidad y operación
-- CI/CD con ambientes (dev / staging / prod), revisión obligatoria de código.
-- Migraciones de datos ensayadas; plan de rollback.
-- Documentación de decisiones como ADR en el repo del proyecto.
+### 4. Quality and Operations
+- CI/CD with environments (dev / staging / prod), mandatory code review.
+- Data migrations rehearsed; rollback plan.
+- Decision documentation as ADRs in the project repo.
 
-## Qué NO hacer
-Big-bang rewrite de los sistemas legados; microservicios sin equipos que los posean; frameworks internos propios.
+## What NOT to Do
+Big-bang rewrite of legacy systems; microservices without teams to own them; custom internal frameworks.

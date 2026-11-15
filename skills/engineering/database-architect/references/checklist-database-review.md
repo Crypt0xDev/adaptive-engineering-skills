@@ -1,25 +1,25 @@
-# ✅ Checklist: Database Review
+# Checklist: Database Review
 
-## Modelo (references/data-modeling.md)
-- [ ] ¿Las entidades reflejan el dominio de negocio real (bien identificadas, sin mezclar conceptos)?
-- [ ] ¿Cada atributo es necesario? (sin campos redundantes o "por si acaso")
-- [ ] ¿Relaciones justificadas por casos de uso reales, con cardinalidad correcta?
-- [ ] ¿Esquema normalizado (3FN), con desnormalizaciones justificadas por métricas?
-- [ ] ¿Sin datos duplicados sin responsable de sincronización?
-- [ ] ¿El modelo soporta las consultas y patrones de uso previstos del sistema?
-- [ ] ¿Tipos correctos (dinero en enteros, fechas con zona horaria, IDs consistentes)?
+## Model (references/data-modeling.md)
+- [ ] Do entities reflect the real business domain (well identified, no mixed concepts)?
+- [ ] Is every attribute necessary? (no redundant or "just in case" fields)
+- [ ] Are relationships justified by real use cases, with correct cardinality?
+- [ ] Is the schema normalized (3NF), with denormalizations justified by metrics?
+- [ ] No duplicate data without a sync owner?
+- [ ] Does the model support the system's expected queries and usage patterns?
+- [ ] Correct types (money in integers, dates with timezone, consistent IDs)?
 
-## Integridad
-- [ ] ¿Toda tabla tiene clave primaria?
-- [ ] ¿Foreign keys y constraints en la BD, no solo en la app?
-- [ ] ¿Campos NOT NULL donde el negocio lo exige?
+## Integrity
+- [ ] Does every table have a primary key?
+- [ ] Foreign keys and constraints in the DB, not just in the app?
+- [ ] NOT NULL fields where the business requires it?
 
-## Rendimiento
-- [ ] ¿Índices basados en consultas reales, no especulativos?
-- [ ] ¿Consultas N+1 detectadas en los flujos principales?
-- [ ] ¿Paginación en toda lectura de colecciones?
+## Performance
+- [ ] Indexes based on real queries, not speculative?
+- [ ] N+1 queries detected in main flows?
+- [ ] Pagination on every collection read?
 
-## Operación
-- [ ] ¿Migraciones versionadas y reversibles?
-- [ ] ¿Backups automáticos verificados (restauración probada)?
-- [ ] ¿Datos sensibles cifrados en reposo si el riesgo lo exige?
+## Operations
+- [ ] Versioned and reversible migrations?
+- [ ] Automated backups verified (restoration tested)?
+- [ ] Sensitive data encrypted at rest if risk requires it?

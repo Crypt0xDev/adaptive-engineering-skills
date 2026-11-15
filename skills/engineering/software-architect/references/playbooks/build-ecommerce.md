@@ -1,28 +1,28 @@
-# 🛒 Playbook: Build E-commerce
+# Playbook: Build E-commerce
 
-## Skills involucradas
+## Skills Involved
 `business-analyst` → `product-manager` → `software-architect` → `security-engineer` → `performance-engineer`
 
-## Fase 0 — ¿Construir o usar plataforma?
-- Catálogo estándar → **Shopify / WooCommerce**. No construir.
-- Construir solo si el modelo de venta es genuinamente atípico o el e-commerce es el core diferencial del negocio.
+## Phase 0 — Build or Use a Platform?
+- Standard catalog → **Shopify / WooCommerce**. Don't build.
+- Build only if the sales model is genuinely atypical or e-commerce is the core business differentiator.
 
-## Si se construye
+## If Building
 
-### 1. Dominio mínimo
-Catálogo → carrito → checkout → orden → pago. Nada más en v1.
+### 1. Minimum Domain
+Catalog → cart → checkout → order → payment. Nothing else in v1.
 
-### 2. Pagos (security-engineer)
-- Stripe / proveedor local. **Nunca tocar datos de tarjeta** (PCI vía proveedor).
-- Idempotencia en creación de órdenes y webhooks de pago.
+### 2. Payments (security-engineer)
+- Stripe / local provider. **Never touch card data** (PCI via provider).
+- Idempotency on order creation and payment webhooks.
 
-### 3. Datos (database-architect)
-- PostgreSQL; precios en enteros (centavos); órdenes inmutables (snapshot de precios).
-- Inventario con control de concurrencia (no vender lo que no hay).
+### 3. Data (database-architect)
+- PostgreSQL; prices in integers (cents); immutable orders (price snapshots).
+- Inventory with concurrency control (don't sell what you don't have).
 
-### 4. Rendimiento (performance-engineer)
-- El catálogo es lectura intensiva: caché de páginas de producto cuando haya tráfico real.
-- Imágenes optimizadas vía CDN.
+### 4. Performance (performance-engineer)
+- The catalog is read-intensive: cache product pages when there's real traffic.
+- Optimized images via CDN.
 
-## Qué NO hacer al inicio
-Motor de recomendaciones, multi-moneda, multi-bodega, marketplace — hasta que el negocio lo pida.
+## What NOT to Do at the Start
+Recommendation engine, multi-currency, multi-warehouse, marketplace — until the business asks for it.

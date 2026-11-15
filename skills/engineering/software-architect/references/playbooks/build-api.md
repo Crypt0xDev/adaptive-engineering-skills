@@ -1,29 +1,29 @@
-# 🔌 Playbook: Build API
+# Playbook: Build API
 
-## Skills involucradas
+## Skills Involved
 `business-analyst` → `software-architect` → `database-architect` → `security-engineer` → `performance-engineer`
 
-## Fases
+## Phases
 
-### 1. Contrato primero
-- Definir recursos, endpoints y formatos antes de codificar.
-- REST por defecto; GraphQL solo si hay clientes con necesidades de consulta muy variables.
-- Versionar desde el inicio (`/v1/`).
+### 1. Contract First
+- Define resources, endpoints, and formats before coding.
+- REST by default; GraphQL only if clients have highly variable query needs.
+- Version from the start (`/v1/`).
 
-### 2. Diseño
-- Convenciones consistentes: nombres en plural, status codes correctos, errores con formato único.
-- Paginación en toda colección desde el día uno.
-- Documentación generada (OpenAPI/Swagger).
+### 2. Design
+- Consistent conventions: plural names, correct status codes, errors with a unified format.
+- Pagination on every collection from day one.
+- Generated documentation (OpenAPI/Swagger).
 
-### 3. Seguridad (security-engineer)
-- Auth según consumidor: API keys (server-to-server) o OAuth2/JWT (usuarios).
-- Rate limiting si es pública.
-- Validación estricta de entrada en cada endpoint.
+### 3. Security (security-engineer)
+- Auth per consumer: API keys (server-to-server) or OAuth2/JWT (users).
+- Rate limiting if public.
+- Strict input validation on every endpoint.
 
-### 4. Operación
-- Logs estructurados con request-id.
+### 4. Operations
+- Structured logs with request-id.
 - Healthcheck endpoint.
-- Tests de contrato para los endpoints críticos.
+- Contract tests for critical endpoints.
 
-## Qué NO hacer al inicio
-Gateway complejo, GraphQL "por si acaso", microservicios por recurso, caché distribuida sin medición.
+## What NOT to Do at the Start
+Complex gateway, GraphQL "just in case", microservices per resource, distributed cache without measurement.

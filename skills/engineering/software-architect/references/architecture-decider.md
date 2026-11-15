@@ -1,30 +1,30 @@
-# 🏗️ Architecture Decider
+# Architecture Decider
 
-Recibe el resumen de `context-analyzer.md` y decide la arquitectura mínima viable.
+Receives the summary from `context-analyzer.md` and decides the minimum viable architecture.
 
-## Matriz de decisión
+## Decision Matrix
 
-| Contexto | Arquitectura recomendada |
-|----------|--------------------------|
-| Idea / prototipo, equipo solo | Script o app de un solo módulo |
-| MVP, dominio incierto | Monolito simple, capas mínimas |
-| Producción, dominio claro | Monolito modular (módulos por dominio) |
-| Escala probada + equipos independientes | Extraer servicios solo donde duele |
+| Context | Recommended Architecture |
+|---------|--------------------------|
+| Idea / prototype, solo developer | Script or single-module app |
+| MVP, uncertain domain | Simple monolith, minimal layers |
+| Production, clear domain | Modular monolith (modules by domain) |
+| Proven scale + independent teams | Extract services only where it hurts |
 
-## Reglas
+## Rules
 
-1. **Nunca empezar en microservicios.** Se extraen, no se diseñan desde cero.
-2. **Capas solo si hay más de un consumidor** de esa lógica.
-3. **Base de datos:** una relacional por defecto; especializadas solo con evidencia.
-4. **Abstracciones externas** (colas, caché, eventos): añadir cuando exista el problema, no antes.
+1. **Never start with microservices.** They are extracted, not designed from scratch.
+2. **Layers only if more than one consumer** of that logic exists.
+3. **Database:** a relational one by default; specialized ones only with evidence.
+4. **External abstractions** (queues, cache, events): add when the problem exists, not before.
 
-## Formato de salida
+## Output Format
 
 ```
-Arquitectura: <decisión>
-Razón: <1-3 frases ligadas al contexto>
-Qué NO haremos y por qué: <lista>
-Señales para evolucionar: <qué dolor justificaría el siguiente nivel>
+Architecture: <decision>
+Reason: <1-3 sentences tied to context>
+What we WON'T do and why: <list>
+Signals to evolve: <what pain would justify the next level>
 ```
 
-Verificar después con `checklist-architecture-review.md` y documentar decisiones irreversibles como ADR en el repo del proyecto.
+Verify afterwards with `checklist-architecture-review.md` and document irreversible decisions as ADRs in the project repo.

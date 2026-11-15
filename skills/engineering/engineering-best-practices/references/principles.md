@@ -1,29 +1,29 @@
-# 🧱 Engineering Principles
+# Engineering Principles
 
-> El contexto siempre define la solución.
+> Context always defines the solution.
 
 ## KISS (Keep It Simple)
-- La solución más simple que resuelve el problema es la correcta.
-- La complejidad debe ganarse con evidencia, no asumirse.
+- The simplest solution that solves the problem is the right one.
+- Complexity must be earned with evidence, not assumed.
 
 ## YAGNI (You Aren't Gonna Need It)
-- No construir para futuros hipotéticos.
-- Solo se implementa lo que el contexto actual exige.
+- Don't build for hypothetical futures.
+- Only implement what the current context demands.
 
-## SOLID contextual
-- SOLID no es dogma: se aplica cuando el costo de no aplicarlo es real.
-- No crear interfaces para una única implementación sin razón.
+## Contextual SOLID
+- SOLID is not dogma: apply it when the cost of not applying it is real.
+- Don't create interfaces for a single implementation without reason.
 
-## Simplicidad > Elegancia
-- Código aburrido y obvio es mejor que código ingenioso.
-- Optimizar para lectura y mantenimiento, no para demostrar conocimiento.
+## Simplicity > Elegance
+- Boring, obvious code is better than clever code.
+- Optimize for readability and maintainability, not to show off knowledge.
 
-## Justificación obligatoria
-- Toda decisión técnica debe poder explicarse en una frase de negocio:
-  "Hacemos X porque el proyecto necesita Y".
+## Mandatory Justification
+- Every technical decision must be explainable in a single business sentence:
+  "We do X because the project needs Y".
 
-## Regla de tres
-- Abstraer en la tercera repetición, no en la primera.
+## Rule of Three
+- Abstract on the third repetition, not the first.
 
-## Pensar en el sistema completo
-- Negocio, escalabilidad y mantenimiento pesan tanto como el código.
+## Think About the Whole System
+- Business, scalability, and maintenance matter as much as the code.

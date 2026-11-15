@@ -1,26 +1,26 @@
-# ✅ Best Practices
+# Best Practices
 
-## Código
-- Nombres que explican intención; el código se lee más de lo que se escribe.
-- Funciones pequeñas con una responsabilidad clara.
-- Manejar errores donde se puede actuar sobre ellos, no antes.
-- Tests para el comportamiento de valor de negocio, no para alcanzar métricas.
+## Code
+- Names that explain intent; code is read more than it is written.
+- Small functions with a single clear responsibility.
+- Handle errors where you can act on them, not before.
+- Tests for business-value behavior, not to hit metrics.
 
-## Arquitectura
-- Capas solo si hay más de un consumidor de esa lógica.
-- Una base de datos relacional por defecto; especializadas solo con evidencia.
-- Colas, caché y eventos: añadir cuando exista el problema, no antes.
+## Architecture
+- Layers only if more than one consumer of that logic exists.
+- A relational database by default; specialized ones only with evidence.
+- Queues, cache, and events: add when the problem exists, not before.
 
-## Proceso
-- Empezar por el flujo de mayor valor de negocio.
-- Entregas pequeñas y frecuentes; feedback temprano.
-- Stack que el equipo ya domina, salvo razón fuerte documentada.
+## Process
+- Start with the highest business-value flow.
+- Small and frequent deliveries; early feedback.
+- Stack the team already masters, unless there's a strong documented reason.
 
-## Documentación
-- Documentar decisiones (el porqué), no lo obvio (el qué).
-- Un dev nuevo debe entender el proyecto en menos de un día.
+## Documentation
+- Document decisions (the why), not the obvious (the what).
+- A new dev should understand the project in less than a day.
 
-## Seguridad mínima siempre
-- Secretos fuera del código (variables de entorno).
-- Validar entradas en el límite del sistema.
-- HTTPS y hashing de contraseñas no son opcionales en ninguna etapa.
+## Minimum Security Always
+- Secrets out of the code (environment variables).
+- Validate inputs at the system boundary.
+- HTTPS and password hashing are not optional at any stage.

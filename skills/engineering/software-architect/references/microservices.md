@@ -1,37 +1,37 @@
-# 🧩 Microservicios: cuándo sí y cuándo no
+# Microservices: When and When Not
 
-> La arquitectura debe aplicarse solo cuando el contexto lo justifique, no como regla fija.
+> Architecture should be applied only when the context justifies it, not as a fixed rule.
 
-## ❌ Cuándo NO usar microservicios
+## When NOT to Use Microservices
 
-- Proyecto en etapa idea / MVP (el dominio aún cambia demasiado).
-- Equipo pequeño (< 2-3 equipos independientes): un solo equipo mantiene mejor un monolito.
-- Límites de dominio aún no probados en producción.
-- "Porque lo usa Netflix/Google" (cargo cult — ver anti-patterns en la skill `engineering-best-practices`).
-- Para resolver problemas de código desordenado: un monolito desordenado se convierte en microservicios desordenados + red.
+- Project in idea / MVP stage (the domain still changes too much).
+- Small team (< 2-3 independent teams): a single team maintains a monolith better.
+- Domain boundaries not yet proven in production.
+- "Because Netflix/Google uses them" (cargo cult — see anti-patterns in skill `engineering-best-practices`).
+- To fix messy code: a messy monolith becomes messy microservices + network.
 
-## ✅ Cuándo SÍ se justifica separar en dos o más servicios
+## When Separating into Two or More Services IS Justified
 
-Se separa un servicio cuando se cumplen **varias** de estas condiciones a la vez (no una sola):
+A service is separated when **several** of these conditions are met at once (not just one):
 
-1. **Límite de dominio probado**: el módulo tiene un lenguaje, datos y reglas propios, con poca comunicación con el resto (bounded context real).
-2. **Escala independiente**: una parte necesita 10x más recursos que el resto (ej. procesamiento de imágenes vs CRUD), y escalar el monolito completo es costoso.
-3. **Equipos independientes**: hay un equipo que puede poseer el servicio completo (código, deploy, guardia). Ley de Conway: la arquitectura sigue a la organización.
-4. **Ciclos de despliegue en conflicto**: una parte cambia a diario y otra es estable, y los deploys se bloquean entre sí.
-5. **Requisitos técnicos incompatibles**: lenguaje/runtime distinto justificado (ej. ML en Python dentro de un sistema Java), o requisitos de cumplimiento que exigen aislamiento (ej. PCI para pagos).
+1. **Proven domain boundary**: the module has its own language, data, and rules, with little communication with the rest (real bounded context).
+2. **Independent scaling**: one part needs 10x more resources than the rest (e.g. image processing vs CRUD), and scaling the full monolith is costly.
+3. **Independent teams**: there's a team that can own the complete service (code, deploy, on-call). Conway's Law: architecture follows organization.
+4. **Conflicting deployment cycles**: one part changes daily and another is stable, and deploys block each other.
+5. **Incompatible technical requirements**: different language/runtime justified (e.g. ML in Python within a Java system), or compliance requirements that demand isolation (e.g. PCI for payments).
 
-## 📏 Reglas al separar
+## Rules When Separating
 
-- **Extraer, no diseñar desde cero**: el primer microservicio se extrae de un monolito modular donde el límite ya se probó.
-- **Un servicio = su base de datos**: sin compartir tablas entre servicios; comunicación solo por API o eventos.
-- **Empezar por el borde**: extraer primero módulos con pocas dependencias (ej. notificaciones, generación de reportes), no el corazón del dominio.
-- **Contratos versionados** entre servicios; un servicio no rompe a otro al desplegar.
-- **Costo asumido conscientemente**: cada servicio añade red, latencia, observabilidad, deploys y modos de fallo distribuidos. Si ese costo no compra nada, no separar.
+- **Extract, don't design from scratch**: the first microservice is extracted from a modular monolith where the boundary was already tested.
+- **One service = its database**: no sharing tables between services; communication only via API or events.
+- **Start from the edge**: extract modules with few dependencies first (e.g. notifications, report generation), not the domain core.
+- **Versioned contracts** between services; one service doesn't break another on deploy.
+- **Cost assumed consciously**: each service adds network, latency, observability, deploys, and distributed failure modes. If that cost doesn't buy anything, don't separate.
 
-## 🚦 Señales para evolucionar (del monolito modular a servicios)
+## Signals to Evolve (from modular monolith to services)
 
-- Builds/deploys del monolito bloquean a varios equipos a diario.
-- Un módulo concreto consume recursos desproporcionados y medidos.
-- Conflictos de merge constantes entre equipos en los mismos módulos.
+- Monolith builds/deploys block multiple teams daily.
+- A specific module consumes disproportionate, measured resources.
+- Constant merge conflicts between teams in the same modules.
 
-Documentar la decisión de extracción como ADR en el repo del proyecto (es irreversible en la práctica).
+Document the extraction decision as ADR in the project repo (it's irreversible in practice).

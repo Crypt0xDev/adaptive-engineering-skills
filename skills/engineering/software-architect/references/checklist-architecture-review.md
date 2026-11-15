@@ -1,19 +1,19 @@
-# ✅ Checklist: Architecture Review
+# Checklist: Architecture Review
 
-## Contexto
-- [ ] ¿La arquitectura corresponde a la etapa real del proyecto (escalera de `references/decision-rules.md`)?
-- [ ] ¿Cada componente tiene una justificación de negocio en una frase?
-- [ ] ¿Está documentado qué NO se hará y por qué?
+## Context
+- [ ] Does the architecture match the project's real stage (ladder from `references/decision-rules.md`)?
+- [ ] Does every component have a one-sentence business justification?
+- [ ] Is it documented what will NOT be done and why?
 
-## Simplicidad
-- [ ] ¿Se puede eliminar alguna capa o servicio sin perder funcionalidad?
-- [ ] ¿Hay abstracciones sin segundo consumidor?
-- [ ] ¿Se evitaron microservicios sin límites de dominio probados?
+## Simplicity
+- [ ] Can any layer or service be removed without losing functionality?
+- [ ] Are there abstractions without a second consumer?
+- [ ] Were microservices avoided without proven domain boundaries?
 
-## Evolución
-- [ ] ¿Las decisiones irreversibles (BD, API pública, contratos) están documentadas como ADR en el repo del proyecto?
-- [ ] ¿Hay señales definidas que indicarían cuándo evolucionar al siguiente nivel?
+## Evolution
+- [ ] Are irreversible decisions (DB, public API, contracts) documented as ADRs in the project repo?
+- [ ] Are there defined signals that would indicate when to evolve to the next level?
 
-## Riesgos
-- [ ] ¿Identificado el punto único de fallo más probable?
-- [ ] ¿Las integraciones externas tienen manejo de fallo?
+## Risks
+- [ ] Is the most likely single point of failure identified?
+- [ ] Do external integrations have failure handling?

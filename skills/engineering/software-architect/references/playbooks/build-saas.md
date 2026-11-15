@@ -1,31 +1,31 @@
-# 🧩 Playbook: Build SaaS
+# Playbook: Build SaaS
 
-## Skills involucradas
+## Skills Involved
 `startup-advisor` → `product-manager` → `software-architect` → `database-architect` → `security-engineer` → `devops-engineer`
 
-## Fases
+## Phases
 
-### 1. Validación (startup-advisor + product-manager)
-- Definir la hipótesis de negocio y el MVP mínimo que la valida.
-- Cortar todo lo que no valide la hipótesis.
+### 1. Validation (startup-advisor + product-manager)
+- Define the business hypothesis and the minimum MVP that validates it.
+- Cut everything that doesn't validate the hypothesis.
 
-### 2. Arquitectura (software-architect + database-architect)
-- Por defecto: monolito simple (Next.js / Rails / Laravel o similar) + PostgreSQL.
-- Multi-tenancy: columna `tenant_id` en una sola BD; esquemas o BDs separadas solo con evidencia.
+### 2. Architecture (software-architect + database-architect)
+- Default: simple monolith (Next.js / Rails / Laravel or similar) + PostgreSQL.
+- Multi-tenancy: `tenant_id` column in a single DB; separate schemas or DBs only with evidence.
 
-### 3. Esenciales SaaS
-- Auth (usar proveedor: Clerk, Auth0, Supabase — no construir).
-- Suscripciones y pagos (Stripe — no construir billing).
-- Emails transaccionales (Resend, Postmark).
-- Onboarding mínimo que lleve al usuario al valor rápido.
+### 3. SaaS Essentials
+- Auth (use a provider: Clerk, Auth0, Supabase — don't build).
+- Subscriptions and payments (Stripe — don't build billing).
+- Transactional emails (Resend, Postmark).
+- Minimum onboarding that gets the user to value quickly.
 
-### 4. Seguridad (security-engineer)
-- Aislamiento por tenant en cada query.
-- Mínimos no negociables de `skills/security-engineer/SKILL.md`.
+### 4. Security (security-engineer)
+- Tenant isolation on every query.
+- Non-negotiable minimums from `skills/security-engineer/SKILL.md`.
 
-### 5. Lanzamiento (devops-engineer)
-- PaaS, CI/CD, backups, monitoreo de errores.
-- Pasar el checklist de lanzamiento (skill `devops-engineer` → `references/checklist-launch.md`).
+### 5. Launch (devops-engineer)
+- PaaS, CI/CD, backups, error monitoring.
+- Pass the launch checklist (skill `devops-engineer` → `references/checklist-launch.md`).
 
-## Qué NO hacer al inicio
-Microservicios, Kubernetes, billing propio, feature flags complejos, multi-región.
+## What NOT to Do at the Start
+Microservices, Kubernetes, custom billing, complex feature flags, multi-region.

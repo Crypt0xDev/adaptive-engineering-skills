@@ -1,56 +1,56 @@
-# 🧬 OOP, polimorfismo y patrones: cuándo aplicarlos
+# OOP, Polymorphism and Patterns: When to Apply Them
 
-> OOP y los patrones (como Singleton) se aplican solo cuando el contexto lo justifique, no como regla fija.
+> OOP and patterns (like Singleton) are applied only when the context justifies it, not as a fixed rule.
 
-## Programación orientada a objetos
+## Object-Oriented Programming
 
-### ✅ Cuándo aplicar OOP
-- El dominio tiene **entidades con estado y comportamiento propios** (Pedido, Cuenta, Reserva) cuyas reglas conviene encapsular juntas.
-- Hay **invariantes que proteger** (ej. "un pedido no puede confirmarse sin items") — la clase garantiza que nunca exista en estado inválido.
-- Existen **variantes reales de comportamiento** que se benefician de una interfaz común.
+### When to Apply OOP
+- The domain has **entities with their own state and behavior** (Order, Account, Reservation) whose rules should be encapsulated together.
+- There are **invariants to protect** (e.g. "an order cannot be confirmed without items") — the class guarantees it never exists in an invalid state.
+- There are **real behavior variants** that benefit from a common interface.
 
-### ❌ Cuándo NO
-- Lógica de transformación de datos pura (entrada → salida): funciones simples son más claras y testeables.
-- Clases que solo tienen getters/setters sin comportamiento (anemic model): es un struct disfrazado, usar un objeto de datos simple.
-- Crear jerarquías de herencia "para reusar código": preferir composición; herencia solo para verdaderas relaciones "es-un" con comportamiento polimórfico.
+### When NOT to
+- Pure data transformation logic (input → output): simple functions are clearer and more testable.
+- Classes with only getters/setters and no behavior (anemic model): it's a struct in disguise, use a simple data object.
+- Creating inheritance hierarchies "to reuse code": prefer composition; inheritance only for true "is-a" relationships with polymorphic behavior.
 
-## Polimorfismo
+## Polymorphism
 
-### ✅ Cuándo
-- Existen **2+ implementaciones reales hoy** del mismo contrato (ej. `PasarelaPago` → Stripe, PayPal) y el código cliente no debe conocer cuál usa.
-- Los `if/switch` sobre el mismo "tipo" se repiten en varios lugares: reemplazarlos por polimorfismo elimina la duplicación.
+### When to Use
+- There are **2+ real implementations today** of the same contract (e.g. `PaymentGateway` → Stripe, PayPal) and the client code shouldn't know which one it uses.
+- `if/switch` on the same "type" repeats in multiple places: replacing them with polymorphism eliminates the duplication.
 
-### ❌ Cuándo NO
-- Una sola implementación "por si acaso" llega otra (YAGNI — abstracción prematura).
-- Un único `switch` en un solo lugar: es más simple y legible que una jerarquía de clases.
+### When NOT to
+- A single implementation "just in case" another comes (YAGNI — premature abstraction).
+- A single `switch` in one place: it's simpler and more readable than a class hierarchy.
 
-## Relaciones entre entidades
+## Entity Relationships
 
-### Necesarias
-- La relación existe en el **negocio real** y el código la consulta o la valida (Pedido → Cliente, Factura → Pedido).
-- La cardinalidad refleja la regla de negocio (un pedido pertenece a UN cliente).
+### Necessary
+- The relationship exists in the **real business** and the code queries or validates it (Order → Customer, Invoice → Order).
+- The cardinality reflects the business rule (an order belongs to ONE customer).
 
-### No necesarias (evitarlas)
-- Relaciones bidireccionales "por comodidad" cuando solo se navega en una dirección — generan acoplamiento y ciclos.
-- Relaciones especulativas para consultas que nadie hace.
-- Entidades intermedias sin significado de negocio.
+### Unnecessary (avoid)
+- Bidirectional relationships "for convenience" when only one direction is navigated — they create coupling and cycles.
+- Speculative relationships for queries nobody makes.
+- Intermediate entities with no business meaning.
 
-**Regla:** cada relación debe justificarse con un caso de uso real que la recorra. Si nadie la consulta, no existe.
+**Rule:** every relationship must be justified by a real use case that traverses it. If nobody queries it, it doesn't exist.
 
-## Patrón Singleton
+## Singleton Pattern
 
-### ✅ Uso correcto (raro)
-Solo cuando **conceptualmente debe existir UNA instancia en todo el sistema** y crear más sería un error:
-- Pool de conexiones a BD, configuración cargada una vez, logger.
-- Incluso en estos casos, preferir **crear una instancia única e inyectarla** (inyección de dependencias) antes que un Singleton con acceso global estático.
+### Correct Use (rare)
+Only when **conceptually there must be ONE instance in the entire system** and creating more would be an error:
+- DB connection pool, configuration loaded once, logger.
+- Even in these cases, prefer **creating a single instance and injecting it** (dependency injection) over a Singleton with static global access.
 
-### ❌ Uso incorrecto (lo habitual)
-- Como variable global disfrazada para "acceder a algo desde cualquier parte" → acoplamiento oculto, imposible de testear.
-- Para servicios con estado mutable compartido → bugs de concurrencia.
-- Por defecto/costumbre, sin preguntar si la unicidad es un requisito del dominio.
+### Incorrect Use (the usual)
+- As a disguised global variable to "access something from anywhere" → hidden coupling, impossible to test.
+- For services with shared mutable state → concurrency bugs.
+- By default/habit, without asking if uniqueness is a domain requirement.
 
-**Regla:** si puedes pasar la dependencia por constructor, hazlo. El Singleton es la última opción, dependiendo del contexto del proyecto y la arquitectura, no la primera.
+**Rule:** if you can pass the dependency through the constructor, do it. Singleton is the last option, depending on the project context and architecture, not the first.
 
-## 🚀 Idea clave
+## Key Idea
 
-La arquitectura (microservicios, OOP, patrones como Singleton) debe aplicarse **solo cuando el contexto lo justifique**, no como regla fija. Ver skill `software-architect` → `references/decision-rules.md` (Paso 3 — patrones bajo demanda).
+Architecture (microservices, OOP, patterns like Singleton) should be applied **only when the context justifies it**, not as a fixed rule. See skill `software-architect` → `references/decision-rules.md` (Step 3 — patterns on demand).

@@ -1,67 +1,67 @@
-# 🗄️ Modelado de datos y normalización
+# Data Modeling and Normalization
 
-Buenas prácticas de diseño de esquema. Complementa a `skills/database-architect/`.
+Best practices for schema design. Complements `skills/database-architect/`.
 
-## 💡 Idea clave
+## Key Idea
 
-El diseño de base de datos debe estar basado en:
+Database design should be based on:
 
-> 📌 **el dominio del problema + las consultas futuras del sistema**
+> **the problem domain + the system's future queries**
 
-No solo en almacenar datos, sino en cómo serán usados, consultados y escalados.
+Not just storing data, but how it will be used, queried, and scaled.
 
-## ✔️ Proceso de buen diseño (en orden)
+## Good Design Process (in order)
 
-1. **Entender los requisitos del sistema**: qué hace el negocio, qué información necesita y con qué frecuencia.
-2. **Definir claramente las entidades del dominio**: sustantivos del negocio con identidad propia (Cliente, Pedido, Producto).
-3. **Establecer relaciones adecuadas**: solo las que el negocio exige, con la cardinalidad correcta (ver sección Relaciones).
-4. **Definir atributos correctos y necesarios**: cada columna responde a una necesidad real; sin campos "por si acaso".
-5. **Aplicar normalización** (3FN por defecto, ver tabla abajo).
-6. **Probar y optimizar según el uso real**: validar el modelo con las consultas principales del sistema e indexar según patrones de acceso medidos.
+1. **Understand system requirements**: what the business does, what information it needs, and how often.
+2. **Clearly define domain entities**: business nouns with their own identity (Customer, Order, Product).
+3. **Establish proper relationships**: only those the business requires, with correct cardinality (see Relationships section).
+4. **Define correct and necessary attributes**: each column answers a real need; no "just in case" fields.
+5. **Apply normalization** (3NF by default, see table below).
+6. **Test and optimize based on real usage**: validate the model with the system's main queries and index based on measured access patterns.
 
-## ⚠️ Errores comunes a evitar
+## Common Mistakes to Avoid
 
-- **No identificar correctamente las entidades** → tablas que mezclan conceptos o conceptos repartidos en varias tablas sin razón.
-- **Campos innecesarios o redundantes** → columnas que nadie consulta o que duplican información derivable.
-- **No definir claves primarias** → toda tabla tiene PK, sin excepción.
-- **No aplicar normalización correctamente** → grupos repetidos, dependencias parciales o transitivas (ver formas normales).
-- **Generar datos duplicados** → el mismo hecho almacenado en dos lugares sin un responsable de sincronizarlo.
-- **No pensar en consultas futuras o patrones de uso** → un modelo "bonito" que hace imposibles las consultas que el sistema necesita a diario.
+- **Not identifying entities correctly** → tables that mix concepts or concepts spread across multiple tables without reason.
+- **Unnecessary or redundant fields** → columns nobody queries or that duplicate derivable information.
+- **Not defining primary keys** → every table has a PK, no exceptions.
+- **Not applying normalization correctly** → repeating groups, partial or transitive dependencies (see normal forms).
+- **Generating duplicate data** → the same fact stored in two places without someone responsible for syncing it.
+- **Not thinking about future queries or usage patterns** → a "pretty" model that makes the daily queries the system needs impossible.
 
-## Reglas de diseño del esquema
+## Schema Design Rules
 
-- **Modelar el negocio, no la UI**: las tablas reflejan entidades reales del dominio, no pantallas.
-- **Tipos correctos**: dinero en enteros (centavos) o `DECIMAL` (nunca float), fechas con zona horaria (`timestamptz`), booleanos reales (no `'S'/'N'`).
-- **Integridad en la BD**: primary keys siempre, foreign keys y constraints (`NOT NULL`, `UNIQUE`, `CHECK`) en la base, no solo en la app.
-- **Nombres consistentes**: un solo idioma y convención (`snake_case` plural para tablas: `orders`, `order_items`).
-- **Sin columnas multivalor**: nunca guardar listas en un campo (`"1,2,3"`); usar tabla relacionada.
-- **Migraciones versionadas** desde el día uno; nunca alterar el esquema a mano en producción.
+- **Model the business, not the UI**: tables reflect real domain entities, not screens.
+- **Correct types**: money in integers (cents) or `DECIMAL` (never float), dates with timezone (`timestamptz`), real booleans (not `'Y'/'N'`).
+- **Integrity in the DB**: primary keys always, foreign keys and constraints (`NOT NULL`, `UNIQUE`, `CHECK`) in the database, not just in the app.
+- **Consistent naming**: one language and convention (`snake_case` plural for tables: `orders`, `order_items`).
+- **No multi-value columns**: never store lists in a field (`"1,2,3"`); use a related table.
+- **Versioned migrations** from day one; never alter the schema manually in production.
 
-## Normalización
+## Normalization
 
-Normalizar hasta **3FN por defecto**:
+Normalize to **3NF by default**:
 
-| Forma | Regla práctica |
-|-------|----------------|
-| 1FN | Cada celda un solo valor; sin grupos repetidos (`telefono1`, `telefono2` → tabla `phones`) |
-| 2FN | Todo atributo depende de la clave completa (importa en claves compuestas) |
-| 3FN | Ningún atributo depende de otro atributo no clave (ciudad no se deduce de código postal dentro de la misma tabla) |
+| Form | Practical Rule |
+|------|----------------|
+| 1NF | Each cell a single value; no repeating groups (`phone1`, `phone2` → `phones` table) |
+| 2NF | Every attribute depends on the complete key (matters for composite keys) |
+| 3NF | No attribute depends on another non-key attribute (city is not derived from zip code within the same table) |
 
-### Desnormalizar solo cuando
-- Hay una consulta medida como lenta que la normalización encarece, y
-- Se documenta el dato duplicado y quién lo mantiene sincronizado.
+### Denormalize Only When
+- There's a measured slow query that normalization makes expensive, and
+- The duplicated data is documented along with who keeps it in sync.
 
-Ejemplo válido: snapshot del precio en `order_items` — no es desnormalización incorrecta, es un **hecho histórico** del negocio (el precio al momento de la compra).
+Valid example: price snapshot in `order_items` — this isn't incorrect denormalization, it's a **historical business fact** (the price at time of purchase).
 
-## Relaciones
+## Relationships
 
-- **1:N** — la habitual: FK en el lado "muchos" (`orders.customer_id`).
-- **N:M** — tabla intermedia con nombre de negocio si lo tiene (`enrollments` mejor que `student_course`).
-- **1:1** — sospechosa: casi siempre son la misma tabla; separar solo por seguridad (datos sensibles) o por columnas enormes poco consultadas.
-- Cada relación se justifica con un caso de uso real que la recorra (ver skill `engineering-best-practices` → `references/oop-and-patterns.md`).
+- **1:N** — the most common: FK on the "many" side (`orders.customer_id`).
+- **N:M** — intermediate table with a business name if it has one (`enrollments` better than `student_course`).
+- **1:1** — suspicious: almost always the same table; separate only for security (sensitive data) or huge rarely-queried columns.
+- Every relationship is justified by a real use case that traverses it (see skill `engineering-best-practices` → `references/oop-and-patterns.md`).
 
-## Índices
+## Indexes
 
-- Crear según consultas reales (WHERE, JOIN, ORDER BY frecuentes), no especulativos.
-- FKs casi siempre indexadas.
-- Cada índice cuesta en escritura: medir antes de añadir más.
+- Create based on real queries (frequent WHERE, JOIN, ORDER BY), not speculative.
+- FKs almost always indexed.
+- Every index costs on writes: measure before adding more.

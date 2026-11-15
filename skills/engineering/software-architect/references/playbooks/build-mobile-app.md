@@ -1,30 +1,30 @@
-# 📱 Playbook: Build Mobile App
+# Playbook: Build Mobile App
 
-## Skills involucradas
+## Skills Involved
 `product-manager` → `ux-designer` → `software-architect` → `devops-engineer`
 
-## Fases
+## Phases
 
-### 1. Decisión de plataforma (software-architect)
-| Contexto | Elección |
-|----------|----------|
-| MVP, equipo web | React Native / Expo o Flutter |
-| Necesidad fuerte de APIs nativas / rendimiento | Nativo (Swift / Kotlin) |
-| Solo validar idea | PWA primero |
+### 1. Platform Decision (software-architect)
+| Context | Choice |
+|---------|--------|
+| MVP, web team | React Native / Expo or Flutter |
+| Strong need for native APIs / performance | Native (Swift / Kotlin) |
+| Just validating an idea | PWA first |
 
 ### 2. UX (ux-designer)
-- Diseñar para offline parcial y conexiones lentas.
-- Estados de carga/error en cada pantalla.
-- Seguir guías de plataforma (HIG / Material).
+- Design for partial offline and slow connections.
+- Loading/error states on every screen.
+- Follow platform guidelines (HIG / Material).
 
 ### 3. Backend
-- Reusar la API existente o crear una mínima (ver `build-api.md`).
-- Auth con tokens de larga vida + refresh.
+- Reuse existing API or create a minimal one (see `build-api.md`).
+- Auth with long-lived tokens + refresh.
 
-### 4. Distribución (devops-engineer)
-- Builds automatizados (EAS, Fastlane).
-- Crash reporting desde el día uno (Sentry, Crashlytics).
-- Plan de releases: las stores tienen revisión, no hay hotfix instantáneo.
+### 4. Distribution (devops-engineer)
+- Automated builds (EAS, Fastlane).
+- Crash reporting from day one (Sentry, Crashlytics).
+- Release plan: stores have review, there's no instant hotfix.
 
-## Qué NO hacer al inicio
-Apps nativas duplicadas con equipo pequeño, sincronización offline compleja, notificaciones push antes de tener usuarios.
+## What NOT to Do at the Start
+Duplicate native apps with a small team, complex offline sync, push notifications before having users.

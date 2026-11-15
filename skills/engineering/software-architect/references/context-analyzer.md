@@ -1,34 +1,34 @@
-# 🔍 Context Analyzer
+# Context Analyzer
 
-Analiza el estado real del proyecto antes de cualquier decisión. Es el primer paso del flujo del sistema.
+Analyzes the real state of the project before any decision. This is the first step in the system flow.
 
-## Entradas a evaluar
+## Inputs to Evaluate
 
-### Negocio
-- Propósito del producto y usuarios objetivo
-- Etapa: idea / MVP / producción / legado
-- Restricciones de tiempo y presupuesto
+### Business
+- Product purpose and target users
+- Stage: idea / MVP / production / legacy
+- Time and budget constraints
 
-### Técnico
-- Stack actual y deuda técnica existente
-- Volumen de datos y tráfico real (no proyectado)
-- Integraciones externas
+### Technical
+- Current stack and existing technical debt
+- Real data volume and traffic (not projected)
+- External integrations
 
-### Equipo
-- Tamaño y seniority
-- Conocimiento del dominio
-- Capacidad de mantenimiento a largo plazo
+### Team
+- Size and seniority
+- Domain knowledge
+- Long-term maintenance capacity
 
-## Salida
+## Output
 
-Un resumen de contexto con:
+A context summary with:
 
 ```
-Etapa: <idea|mvp|produccion|legado>
-Complejidad del dominio: <baja|media|alta>
-Carga real: <baja|media|alta>
-Equipo: <solo|pequeño|mediano|grande>
-Riesgo principal: <descripción>
+Stage: <idea|mvp|production|legacy>
+Domain complexity: <low|medium|high>
+Real load: <low|medium|high>
+Team: <solo|small|medium|large>
+Main risk: <description>
 ```
 
-Este resumen alimenta a `architecture-decider.md` y determina qué otras skills del plugin activar.
+This summary feeds into `architecture-decider.md` and determines which other plugin skills to activate.

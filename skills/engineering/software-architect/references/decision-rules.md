@@ -1,39 +1,39 @@
-# ⚖️ Decision Framework
+# Decision Framework
 
-## Paso 1 — Contexto primero
-Antes de proponer cualquier solución, responder:
-1. ¿Qué problema de negocio resuelve?
-2. ¿Cuántos usuarios / qué carga real (no proyectada)?
-3. ¿Qué tamaño y experiencia tiene el equipo?
-4. ¿Cuál es el horizonte de vida del proyecto?
-5. ¿Etapa: idea, MVP, producción o legado?
+## Step 1 — Context First
+Before proposing any solution, answer:
+1. What business problem does it solve?
+2. How many users / what real load (not projected)?
+3. What size and experience does the team have?
+4. What is the project's expected lifespan?
+5. Stage: idea, MVP, production, or legacy?
 
-## Paso 2 — Escalera de complejidad
-Empezar siempre en el nivel más bajo que funcione:
+## Step 2 — Complexity Ladder
+Always start at the lowest level that works:
 
-| Nivel | Cuándo |
-|-------|--------|
-| Script / función | Tarea puntual, sin estado |
-| Monolito simple | MVP, equipo pequeño, dominio incierto |
-| Monolito modular | Dominio claro, equipo creciendo |
-| Servicios separados | Límites de dominio probados + necesidad real de escala independiente |
+| Level | When |
+|-------|------|
+| Script / function | One-off task, no state |
+| Simple monolith | MVP, small team, uncertain domain |
+| Modular monolith | Clear domain, growing team |
+| Separate services | Proven domain boundaries + real need for independent scaling |
 
-Subir de nivel solo con evidencia (dolor real, no anticipado).
+Move up only with evidence (real pain, not anticipated).
 
-## Paso 3 — Patrones bajo demanda
-Un patrón se aplica solo si:
-- El problema que resuelve ya existe en el proyecto, y
-- El costo de no aplicarlo es mayor que el de aplicarlo.
+## Step 3 — Patterns on Demand
+A pattern is applied only if:
+- The problem it solves already exists in the project, and
+- The cost of not applying it is greater than the cost of applying it.
 
-## Paso 4 — Reversible vs irreversible
-- **Reversibles** (nombres, estructura interna): decidir rápido.
-- **Irreversibles** (base de datos, API pública, contratos): analizar más y documentar como ADR en el repo del proyecto.
+## Step 4 — Reversible vs Irreversible
+- **Reversible** (names, internal structure): decide quickly.
+- **Irreversible** (database, public API, contracts): analyze more and document as ADR in the project repo.
 
-## Paso 5 — Formato de toda decisión
+## Step 5 — Format for Every Decision
 
 ```
-Decisión: <qué se eligió>
-Razón: <1-3 frases ligadas al contexto>
-Qué NO haremos y por qué: <lista>
-Señales para evolucionar: <qué dolor justificaría el siguiente nivel>
+Decision: <what was chosen>
+Reason: <1-3 sentences tied to context>
+What we WON'T do and why: <list>
+Signals to evolve: <what pain would justify the next level>
 ```

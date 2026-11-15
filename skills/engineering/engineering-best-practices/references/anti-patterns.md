@@ -1,31 +1,31 @@
-# 🚫 Anti-patterns
+# Anti-patterns
 
-Errores que el sistema debe detectar y evitar.
+Mistakes the system must detect and avoid.
 
-### Sobreingeniería
-Resolver problemas que no existen. Señales: configuración para casos que nadie pidió, flexibilidad sin consumidores.
-**Antídoto:** KISS + escalera de complejidad (skill `software-architect` → `references/decision-rules.md`).
+### Over-engineering
+Solving problems that don't exist. Signs: configuration for cases nobody asked for, flexibility with no consumers.
+**Antidote:** KISS + complexity ladder (skill `software-architect` → `references/decision-rules.md`).
 
-### Abstracción prematura
-Crear interfaces, factories o capas genéricas antes de tener 2+ casos reales.
-**Antídoto:** regla de tres — abstraer en la tercera repetición.
+### Premature Abstraction
+Creating interfaces, factories, or generic layers before having 2+ real cases.
+**Antidote:** rule of three — abstract on the third repetition.
 
-### Microservicios innecesarios
-Dividir en servicios sin límites de dominio probados ni necesidad de escala independiente.
-**Antídoto:** monolito modular primero; extraer solo donde duele.
+### Unnecessary Microservices
+Splitting into services without proven domain boundaries or a real need for independent scaling.
+**Antidote:** modular monolith first; extract only where it hurts.
 
-### Complejidad sin valor
-Patrones, frameworks o herramientas añadidos porque "es lo correcto" y no porque el contexto lo pida.
-**Antídoto:** toda pieza debe justificarse con una frase de negocio.
+### Complexity Without Value
+Patterns, frameworks, or tools added because "it's the right thing" rather than because the context calls for it.
+**Antidote:** every piece must be justified with a business sentence.
 
-### Cargo cult
-Copiar arquitecturas de empresas grandes (Netflix, Google) en contextos radicalmente distintos.
-**Antídoto:** el contexto siempre define la solución.
+### Cargo Cult
+Copying architectures from large companies (Netflix, Google) in radically different contexts.
+**Antidote:** context always defines the solution.
 
-### Optimización prematura
-Optimizar rendimiento sin medir primero.
-**Antídoto:** medir → identificar el cuello real → optimizar solo eso.
+### Premature Optimization
+Optimizing performance without measuring first.
+**Antidote:** measure → identify the real bottleneck → optimize only that.
 
-### Resume-driven development
-Elegir tecnología por moda o CV, no por el problema.
-**Antídoto:** stack que el equipo domina, salvo razón fuerte documentada.
+### Resume-driven Development
+Choosing technology for trends or CV, not for the problem.
+**Antidote:** stack the team masters, unless there's a strong documented reason.
