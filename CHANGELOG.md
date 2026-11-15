@@ -1,26 +1,36 @@
 # Changelog
 
-Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y
-[versionado semántico](https://semver.org/lang/es/).
+Based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and
+[Semantic Versioning](https://semver.org/).
+
+## [2.0.0] - 2026-11-15
+
+### Added
+- Expanded to 101 skills organized in 9 categories
+- All skills translated to English and improved with examples, tables and verification checklists
+- Skills grouped into: engineering, quality, design, devops, security, workflow, optimization, omniroute, memory
+
+### Changed
+- Major version bump to 2.0.0
+- README restructured with collapsible sections per category
+- CI validator updated for nested directory structure
 
 ## [1.3.0] - 2026-11-04
 
-### Añadido
-- Skill `test-engineer`: qué probar, con qué tipo de test y cuánto, según el riesgo y la etapa.
-- El validador comprueba los campos obligatorios de `plugin.json`, que `marketplace.json`
-  liste el plugin, que cada skill aparezca en el README y que el total de skills declarado coincida.
-- `.gitattributes` para normalizar los finales de línea a LF.
+### Added
+- Skill `test-engineer`: what to test, with which test type, and how much, based on risk and stage.
+- CI validator checks required fields in `plugin.json`, `marketplace.json` listing, README references, and skill count consistency.
+- `.gitattributes` for LF line endings.
 - `CHANGELOG.md`.
-- Ejecución manual del CI (`workflow_dispatch`).
+- Manual CI trigger (`workflow_dispatch`).
 
-### Cambiado
-- Repo renombrado a `adaptive-engineering-skills` (homepage, badge de CI, comando de instalación).
-- Nombre visible del proyecto: "Adaptive Engineering Skills".
-- La plantilla de `skill-creator` incluye el frontmatter (`name`, `description`) que exige el CI.
+### Changed
+- Repo renamed to `adaptive-engineering-skills`.
+- `skill-creator` template includes frontmatter (`name`, `description`) required by CI.
 
-### Corregido
-- Las plantillas de issues no tenían el `---` inicial del frontmatter, así que GitHub no las reconocía.
+### Fixed
+- Issue templates missing initial `---` frontmatter delimiter.
 
 ## [1.2.0]
 
-- Versión publicada en el repo anterior `adaptive-ai-engineering-system`.
+- Published under previous repo `adaptive-ai-engineering-system`.
