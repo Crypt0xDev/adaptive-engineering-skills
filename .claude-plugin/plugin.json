@@ -1,7 +1,7 @@
 {
   "name": "adaptive-engineering",
-  "description": "Adaptive Engineering Skills: motor de decisiones de ingenieria asistido por IA. Arquitectura segun contexto (no por dogma), calidad y seguridad de codigo obligatorias, anti-sobreingenieria. Incluye 18 skills: 13 roles senior (arquitecto, seguridad, base de datos, DevOps, performance, testing, code review y mas) y 5 de proceso (decisiones tecnicas fundamentadas, buenas practicas de ingenieria, evaluacion de GraphQL, ahorro de tokens en archivos, redaccion academica).",
-  "version": "1.3.0",
+  "description": "Adaptive Engineering Skills: 101 software engineering skills. Context-driven architecture, mandatory code quality and security.",
+  "version": "2.0.0",
   "author": {
     "name": "Crypt0xDev",
     "url": "https://github.com/Crypt0xDev"
@@ -16,6 +16,10 @@
     "security",
     "testing",
     "skills",
-    "context-driven"
+    "context-driven",
+    "devops",
+    "performance",
+    "testing",
+    "design"
   ]
 }
