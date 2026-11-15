@@ -1,32 +1,31 @@
 ---
-name: Informe de error
-about: Reporta un problema o comportamiento inesperado del proyecto.
+name: Bug report
+about: Report a problem or unexpected behavior.
 title: "[BUG] "
 labels: bug
 assignees: []
 
 ---
 
-## Resumen
+## Summary
 
-Describe brevemente el error.
+Brief description of the bug.
 
-## Pasos para reproducir
+## Steps to reproduce
 
 1. ...
 2. ...
 3. ...
 
-## Resultado esperado
+## Expected behavior
 
-¿Qué esperabas que ocurriera?
+What should have happened?
 
-## Resultado actual
+## Actual behavior
 
-¿Qué ocurrió en realidad?
+What happened instead?
 
-## Entorno
+## Environment
 
-- Sistema operativo:
-- Versión del repositorio:
-- Notas adicionales:
+- OS:
+- Plugin version:

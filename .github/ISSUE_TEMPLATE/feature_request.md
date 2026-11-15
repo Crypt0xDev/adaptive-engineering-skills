@@ -1,24 +1,20 @@
 ---
-name: Solicitud de característica
-about: Sugiere una mejora o nueva funcionalidad para el proyecto.
+name: Feature request
+about: Suggest an improvement or new feature.
 title: "[FEATURE] "
 labels: enhancement
 assignees: []
 
 ---
 
-## Resumen
+## Summary
 
-Describe la nueva característica o mejora.
+Describe the feature or improvement.
 
-## Motivación
+## Motivation
 
-¿Por qué es importante esta mejora?
+Why is this needed?
 
-## Propuesta
+## Proposal
 
-Describe cómo debería funcionar.
-
-## Alternativas
-
-Menciona otras opciones evaluadas si las hay.
+How should it work?

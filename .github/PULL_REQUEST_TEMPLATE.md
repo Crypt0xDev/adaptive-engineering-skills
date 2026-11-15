@@ -1,20 +1,16 @@
 # Pull Request
 
-## Descripción
+## Description
 
-Describe brevemente el cambio realizado y el motivo.
+What changed and why.
 
-## Cambios incluidos
+## Changes
 
-- [ ] Nuevo contenido
-- [ ] Correcciones
-- [ ] Documentación
-- [ ] Otros
+- [ ] New skills
+- [ ] Bug fixes
+- [ ] Documentation
+- [ ] Other
 
-## Cómo probarlo
+## How to test
 
-Indica los pasos para verificar el cambio.
-
-## Notas adicionales
-
-Agrega cualquier detalle importante, enlaces a issues o consideraciones extra.
+Steps to verify the change.
