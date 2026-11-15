@@ -38,9 +38,9 @@ A Claude Code plugin with 101 software engineering skills organized in 9 categor
 | `startup-advisor` | Speed and validation |
 | `researcher` | Compare technologies before choosing |
 | `skill-creator` | Standard for creating skills |
-| `buenas-practicas-ingenieria` | SOLID and structure, with judgment |
-| `decisiones-tecnicas-fundamentadas` | Ask for context before deciding |
-| `redaccion-academica` | Reports with real citations and sources |
+| `engineering-best-practices` | SOLID and structure, with judgment |
+| `grounded-technical-decisions` | Ask for context before deciding |
+| `academic-writing` | Reports with real citations and sources |
 | `api-and-interface-design` | Stable API and interface design |
 | `context-engineering` | Optimize agent context |
 | `idea-refine` | Refine ideas into actionable concepts |
@@ -119,7 +119,7 @@ A Claude Code plugin with 101 software engineering skills organized in 9 categor
 | `debugging-and-error-recovery` | Systematic root-cause debugging |
 | `observability-and-instrumentation` | Production diagnostics instrumentation |
 | `source-driven-development` | Decisions based on official documentation |
-| `graphql-evaluacion-implementacion` | GraphQL or REST and how to do it right |
+| `graphql-evaluation` | GraphQL or REST and how to do it right |
 
 </details>
 
@@ -131,7 +131,7 @@ A Claude Code plugin with 101 software engineering skills organized in 9 categor
 | `performance-engineer` | Optimize by measuring, not guessing |
 | `performance-optimization` | Performance optimization |
 | `headroom` | LLM context compression to reduce tokens |
-| `ahorro-tokens-archivos` | Read PDF, Word, Excel and PPT with minimal tokens |
+| `token-efficient-files` | Read PDF, Word, Excel and PPT with minimal tokens |
 
 </details>
 
